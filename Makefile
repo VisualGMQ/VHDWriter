@@ -9,8 +9,8 @@ FixedVHDWriterGUI:FixedVHDWriterGUI.cpp ${OBJ_DIR}/VHD.o
 test:${OBJ_DIR}/test.o ${OBJ_DIR}/VHD.o
 	g++ test.cpp ${OBJ_DIR}/VHD.o -o ${BIN_DIR}/test -std=c++11
 ${OBJ_DIR}/VHD.o:VHD.hpp VHD.cpp
-	-mkdir ${BIN_DIR}
-	-mkdir ${OBJ_DIR}
+	-mkdir -p ${BIN_DIR}
+	-mkdir -p ${OBJ_DIR}
 	g++ VHD.cpp -c -o ${OBJ_DIR}/VHD.o -std=c++11
 .PHONY:clean
 clean:
